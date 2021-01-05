@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;500;600&display=swap');
+
+:root{
+    --color-uno: hsl(263, 55%, 52%);
+    --color-dos: hsl(217, 19%, 35%);
+    --color-tres: hsl(219, 29%, 14%);
+    --color-blanco:  hsl(0, 0%, 100%);
+    --neutral-uno: hsl(0, 0%, 81%);
+    --neutral-dos:  hsl(210, 46%, 95%)
+}
+
+/* Estilos generales */
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;;
+    background-color: var(--neutral-uno);
+    
+}
+
+.container{
+    margin: auto;
+    padding: 50px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px 10px;
+    grid-template-areas:
+        "A A B C"
+        "E D D C"
+        "attribution attribution attribution attribution";
+    height: 100vh;
+    
+}
+
+.A {
+    grid-area: A;
+    border-radius: 10px;
+    padding:20px;
+    background-color: var(--color-uno);
+}
+
+.B {
+    grid-area: B;
+    border-radius: 10px;
+    padding:20px;
+    background-color: var(--color-dos);
+}
+
+.C {
+    grid-area: C;
+    border-radius: 10px;
+    padding:20px;
+    background-color: var(--color-blanco);
+    color:var(--color-tres);
+}
+
+.D {
+    grid-area: D;
+    border-radius: 10px;
+    padding:20px;
+    background-color: var(--color-tres);
+}
+
+.E{ 
+    grid-area: E;
+    border-radius: 10px;
+    padding:20px;
+    background-color: var(--color-blanco);
+    color:var(--color-tres);
+}
+.attribution{
+    grid-area: attribution;
+    border-radius: 10px;
+    padding:20px;
+    background-color: var(--color-blanco);
+    color:var(--color-tres);
+    text-align: center;
+    
+}
+
+
+/* estilos de card */
+.card__title,.card__title-dos{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    
+}
+    .card__title img, .card__title-dos img{
+        border-radius: 50%;
+        border: 2px solid var(--neutral-uno);
+        margin-right: 15px;
+    }
+    .card__title .card__title-text{
+        color: var(--color-blanco);
+    }
+    .card__title .card__title-text span{
+        opacity: 50%;
+    }
+
+.card__text h4{
+        color: var(--color-blanco);
+        font-weight: 600;
+        font-size: 20px;
+        padding-bottom: 10px;
+        text-align: justify;
+}
+.card__text p{
+        color: var(--color-blanco);
+        opacity: 50%;
+        text-align: justify;
+}
+
+/* ---------    --------- */
+.card__title-dos .card__title-text-dos{
+    color: var(--color-tres);
+}
+.card__title-dos .card__title-text-dos span{
+    opacity: 50%;
+}
+
+
+.card__text-dos h4{
+    color: var(--color-tres);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 20px 0 10px 0;
+    text-align: justify;
+
+}
+.card__text-dos p{
+    color: var(--color-tres);
+    opacity: 50%;
+    text-align: justify;
+}
+
+
+/* =========== Responsive ================ */
+
+
+@media only screen and (max-width: 550px){
+    .grid-container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr 1fr 1fr;
+        grid-template-areas:  
+            "A"
+            "B"
+            "C"
+            "D"
+            "E"
+            "attribution";
+    }
+}
